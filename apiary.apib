@@ -1,0 +1,214 @@
+FORMAT: 1A
+HOST: https://polls.apiblueprint.org/
+
+# MilFit
+
+This API is going to represent each endpoint for my MilFit Project.
+
+## Data Strcutures
+
+### Exercise Model
+    + id: `ae506d28-a581-4123-aceb-4c4d2714f197` (string, required) - Unique Identifier (uuid)
+    + title: kettleBell (DataTypes.STRING, required)
+    + type: muscle (DataTypes.STRING, required)
+    
+### Favorites Model
+    + id: '5598554a-e3bd-4c02-99cc-9da2d27058e7' (string, required) - Unique Identifier (uuid)
+    + title: Spinning Class (DataTypes.STRING, required)
+
+### Blogs Model
+    + id: 'd561b35b-2ffd-4ee7-9168-fa8fbed6ac12' (DataTypes.UUIDV4, required)
+    + title: A Day in the life of a Medic (DataTypes.STRING, required)
+    + createdAt: `2020-09-11T08:40:51.620Z` (string, required) - Date resource was created
+    + updatedAt: `2020-09-11T08:40:51.620Z` (string, required) - Date resource was last updated
+    
+### Profile Model
+    + id: 'f476596e-2521-4d67-82cc-ece25041516a' (DataTypes.UUIDV4, required)
+    + name: Kaiti Duran (DataTypes.STRING, required)
+    + age: 27 (DataTypes.STRING, required)
+    + height: 5ft 7inches (DataTypes.STRING, required)
+    + weight: 145 lbs (DataTypes.STRING, required)
+    + lastPTScore: 89.75 (DataTypes.STRING, required)
+    
+### ScoreSheet Model
+    + id: 'b3ae036f-21af-48dc-9266-3a4ab682f00a' (DataTypes.UUIDV4, required)
+    + runTime: 14:30 (DataTypes.STRING, required)
+    + pushUps: 22 (DataTypes.STRING, required)
+    + sitUps: 49 (DataTypes.STRING, required)
+
+## Exercises Collection [/exercises]
+
+### List Exercises [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "exercises": [
+                    {
+                        "id": "ae506d28-a581-4123-aceb-4c4d2714f197",
+                        "title": "Kettlebell Workout"
+                    }, {
+                        "id": "1f34bf07-6692-4029-a39b-9b97714ecb78",
+                        "title": "Spinning"
+                    }, {
+                        "id": "68ae28ec-ffd5-4513-aa7b-2df22cc71d4c",
+                        "title": "Yoga"
+                    }, {
+                        "id": "f494dc89-da9f-4c20-a087-9dd64a7f2d1f",
+                        "title": "Chest it out!"
+                    }
+                ]
+            }
+        ]
+
++ Response 200 (application/json)
+        
+        + Headers
+            
+            Location: /exercises/{id}
+        
+        + Body
+            
+            {
+                "exercises": [
+                    {
+                        "id": "ae506d28-a581-4123-aceb-4c4d2714f197",
+                        "title": "Kettlebell Workout"
+                    }
+                ]
+            }
+        
+        
+## Favorites [/favorites]
+
+### List Favorites [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "favorites": [
+                    {
+                        "id": "ae506d28-a581-4123-aceb-4c4d2714f197",
+                        "title": "Kettlebell Workout"
+                    }, {
+                        "id": "1f34bf07-6692-4029-a39b-9b97714ecb78",
+                        "title": "Spinning"
+                    }, {
+                        "id": "68ae28ec-ffd5-4513-aa7b-2df22cc71d4c",
+                        "title": "Yoga"
+                    }, {
+                        "id": "f494dc89-da9f-4c20-a087-9dd64a7f2d1f",
+                        "title": "Chest it out!"
+                    }
+                ]
+            }
+        ]
+        
+## Blogs [/blogs]
+
+### List Blogs [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "blogs": [
+                    {
+                        "id": "d561b35b-2ffd-4ee7-9168-fa8fbed6ac12",
+                        "title": "A Day in the life of a Medic"
+                    }, {
+                        "id": "1d62580a-cbf8-454d-8ad2-6864ba01656d",
+                        "title": "Yoga makes my PT scores soar!"
+                    }, {
+                        "id": "0f5a163c-b130-4514-8625-088c645c9d0f",
+                        "title": "How to fit in 30 minute workouts to guarantee a passing PT score"
+                    }
+                ]
+            }
+        ]
+        
+## Profile [/profiles]
+
+### List Profile [GET]
+
++ Response 200 (application/json)
+        
+        + Headers
+            
+            Location: /profiles/{id}
+        
+        + Body
+            
+            {
+                "profile": [
+                    "id": "f476596e-2521-4d67-82cc-ece25041516a",
+                    "name": "Kaiti Duran", 
+                    "age": "27",
+                    "height": "5ft 7inches", 
+                    "weight": "145 lbs",
+                    "lastPTScore": "89.75" 
+                ]
+            }
+        
+        
+### Update Profile [PUT]
+
++ Response 201 (application/json)
+        
+        + Headers
+            
+            Location: /profiles/{id}
+    
+        + Body
+            
+            {
+                "profile": [
+                    "id": "f476596e-2521-4d67-82cc-ece25041516a",
+                    "name": "Kaiti Duran", 
+                    "age": "28",
+                    "height": "5ft 7inches", 
+                    "weight": "137 lbs",
+                    "lastPTScore": "94.20" 
+                ]
+            }
+
+## ScoreSheets [/scoreSheets] 
+
+### List ScoreSheets [GET]
+
++ Response 200 (application/json)
+
+        + Headers
+            
+            Location: /profiles/{id}
+        
+        + Body
+            
+            {
+                "scoreSheets": [
+                    "id": "b3ae036f-21af-48dc-9266-3a4ab682f00a",
+                    "runTime": "14:30", 
+                    "pushUps": "22",
+                    "sitUps": "49"
+                ]
+            }
+            
+### Update ScoreSheet [PUT]
++ Response 201 (application/json)
+
+        + Headers
+            
+            Location: /scoreSheets/{id}
+        
+        + Body
+            
+            {
+                "scoreSheets": [
+                    "id": "b3ae036f-21af-48dc-9266-3a4ab682f00a",
+                    "runTime": "13:30", 
+                    "pushUps": "34",
+                    "sitUps": "52"
+                ]
+            }

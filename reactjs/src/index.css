@@ -1,0 +1,21 @@
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+/**
+**********  GLOBAL ***********
+**/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+:root {
+  --active-color: rgb(255, 51, 102);
+  --primary-color: #74e0ef;
+  --secondary-color: #1e1e1e;
+  --white: #fdfdfd;
+  --gray-color: #f4f4f8;
+  --border-color: #e6e6ea;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
