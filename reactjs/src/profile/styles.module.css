@@ -1,0 +1,36 @@
+.heading {
+  width: auto;
+  composes: heading from '../brand.css';
+}
+
+/* .heading:hover {
+  color: var(--primary-color);
+  background: var(--secondary-color);
+} */
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  flex-grow: 5;
+}
+
+.topBar {
+  display: block;
+  padding: 2em 0 1em 0;
+}
+
+.inputFields {
+  width: 400px;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  text-align: center;
+  border-radius: 3em;
+}

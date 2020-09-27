@@ -1,0 +1,11 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper {
+  background-color: azure;
+  box-shadow: 1em;
+  padding: 1em;
+}

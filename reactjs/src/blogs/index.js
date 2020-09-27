@@ -8,10 +8,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Grid, Container } from '@material-ui/core';
-import Pic1 from '../../images/situps.jpg';
-import Pic2 from '../../images/inhomeworkout.jpg';
-import Pic3 from '../../images/yoga.png';
-import Pic4 from '../../images/running.jpg';
+import Pic1 from '../images/situps.jpg';
+import Pic2 from '../images/inhomeworkout.jpg';
+import Pic3 from '../images/yoga.png';
+import Pic4 from '../images/running.jpg';
 import styles from './styles.module.css';
 
 // Styles specific to the Material UI components

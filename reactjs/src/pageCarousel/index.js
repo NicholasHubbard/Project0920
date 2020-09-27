@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import Button from '@material-ui/core/Button';
-import carousel1 from '../../images/pushup.png';
-import carousel2 from '../../images/warrior.png';
-import carousel3 from '../../images/yoga.png';
+import carousel1 from '../images/pushup.png';
+import carousel2 from '../images/warrior.png';
+import carousel3 from '../images/yoga.png';
 
 // Carousel to flip through the highlighted front page
 class PageCarousel extends Component {
